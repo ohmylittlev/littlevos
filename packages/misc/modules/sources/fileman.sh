@@ -7,4 +7,4 @@
 . /etc/profile
 jslisten set "FileMan"
 
-fileman
+LANG=$(get_setting system.language) fileman
