@@ -1,0 +1,169 @@
+diff --git a/Makefile b/Makefile
+index fdffaef..cc1ce23 100644
+--- a/Makefile
++++ b/Makefile
+@@ -45,7 +45,7 @@ $(PO): $(POT)
+ 	msgmerge --update $@ $<
+ 
+ $(POT): $(SRC)
+-	xgettext -k_ -j -lC++ -c -o $(POT) $(SRC)
++	xgettext --from-code=UTF-8 -k_ -j -lC++ -c -o $(POT) $(SRC)
+ 
+ clean :
+ 	rm -f $(OBJ) $(TARGET) $(MO) $(MO_INSTALL)
+diff --git a/src/mainWindow.cpp b/src/mainWindow.cpp
+index 03edd43..69dcebb 100644
+--- a/src/mainWindow.cpp
++++ b/src/mainWindow.cpp
+@@ -301,10 +301,10 @@ void MainWindow::openHighlightedFile(void)
+    // Dialog 'view as text' / 'edit as text'
+    int action = -1;
+    {
+-      Dialog l_dialog(_("Open:"));
+-      l_dialog.addOption(_("View as text"), 0, g_iconFileText);
+-      l_dialog.addOption(_("Edit as text"), 1, g_iconEdit);
+-      l_dialog.addOption(_("Cancel"), 2, g_iconCancel);
++      Dialog l_dialog(_("打开:"));
++      l_dialog.addOption(_("以文本形式查看"), 0, g_iconFileText);
++      l_dialog.addOption(_("以文本形式编辑"), 1, g_iconEdit);
++      l_dialog.addOption(_("取消"), 2, g_iconCancel);
+       action = l_dialog.execute();
+    }
+    if (action != 0 && action != 1)
+@@ -313,10 +313,10 @@ void MainWindow::openHighlightedFile(void)
+    // If the file is > 1M, ask for confirmation
+    if (m_fileLister[m_cursor].m_size > 1024 * 1024)
+    {
+-      Dialog l_dialog(_("Question:"));
+-      l_dialog.addLabel(_("The file is big. Open anyway?"));
+-      l_dialog.addOption(_("Yes"), 0, g_iconSelect);
+-      l_dialog.addOption(_("No"), 1, g_iconCancel);
++      Dialog l_dialog(_("问题:"));
++      l_dialog.addLabel(_("这个文件很大，确定要打开吗？"));
++      l_dialog.addOption(_("是"), 0, g_iconSelect);
++      l_dialog.addOption(_("否"), 1, g_iconCancel);
+       if (l_dialog.execute() != 0)
+          return;
+    }
+@@ -374,21 +374,21 @@ void MainWindow::openContextMenu(void)
+       Dialog l_dialog (oss.str());
+       if (nbSelected > 0)
+       {
+-         l_dialog.addOption(_("Copy"), 0, g_iconCopy);
+-         l_dialog.addOption(_("Cut"), 1, g_iconCut);
++         l_dialog.addOption(_("复制"), 0, g_iconCopy);
++         l_dialog.addOption(_("剪切"), 1, g_iconCut);
+       }
+       if (m_clipboard.size() > 0)
+-         l_dialog.addOption(_("Paste"), 2, g_iconPaste);
++         l_dialog.addOption(_("粘贴"), 2, g_iconPaste);
+       if (nbSelected > 0)
+-         l_dialog.addOption(_("Delete"), 3, g_iconTrash);
++         l_dialog.addOption(_("删除"), 3, g_iconTrash);
+       if (nbSelected == 1)
+-         l_dialog.addOption(_("Rename"), 9, g_iconEdit);
++         l_dialog.addOption(_("重命名"), 9, g_iconEdit);
+       if (m_fileLister.getNbSelected('d') > 0)
+-         l_dialog.addOption(_("Size"), 4, g_iconDisk);
+-      l_dialog.addOption(_("Select all"), 5, g_iconSelect);
+-      l_dialog.addOption(_("Select none"), 6, g_iconNone);
+-      l_dialog.addOption(_("New directory"), 7, g_iconNewDir);
+-      l_dialog.addOption(_("Quit"), 8, g_iconQuit);
++         l_dialog.addOption(_("大小"), 4, g_iconDisk);
++      l_dialog.addOption(_("选择所有"), 5, g_iconSelect);
++      l_dialog.addOption(_("取消选择"), 6, g_iconNone);
++      l_dialog.addOption(_("新文件夹"), 7, g_iconNewDir);
++      l_dialog.addOption(_("退出"), 8, g_iconQuit);
+       result = l_dialog.execute();
+    }
+    switch(result)
+@@ -421,8 +421,8 @@ void MainWindow::openContextMenu(void)
+       case 4:
+       {
+          // Display a "please wait" message
+-         Dialog dialogPleaseWait(_("Info"));
+-         dialogPleaseWait.addLabel(_("Please wait..."));
++         Dialog dialogPleaseWait(_("提示"));
++         dialogPleaseWait.addLabel(_("请稍候……"));
+          dialogPleaseWait.render(true);
+          IWindow::renderPresent();
+          m_fileLister.computeSelectedDirSize(m_title);
+@@ -447,7 +447,7 @@ void MainWindow::openContextMenu(void)
+       // New directory
+       case 7:
+       {
+-         TextInput textInput(_("New directory"), g_iconNewDir);
++         TextInput textInput(_("新文件夹"), g_iconNewDir);
+          if (textInput.execute() != -2 && ! textInput.getInputText().empty())
+          {
+             FileUtils::makeDirectory(m_title + (m_title == "/" ? "" : "/") + textInput.getInputText());
+@@ -459,7 +459,7 @@ void MainWindow::openContextMenu(void)
+       case 9:
+       {
+          std::string fileSrc = m_fileLister.getSelectFirst();
+-         TextInput textInput(_("Rename"), g_iconEdit, fileSrc);
++         TextInput textInput(_("重命名"), g_iconEdit, fileSrc);
+          if (textInput.execute() != -2 && ! textInput.getInputText().empty())
+          {
+             FileUtils::renameFile(m_title + (m_title == "/" ? "" : "/") + fileSrc, m_title + (m_title == "/" ? "" : "/") + textInput.getInputText());
+diff --git a/src/textEditor.cpp b/src/textEditor.cpp
+index 39116bd..6db26ad 100644
+--- a/src/textEditor.cpp
++++ b/src/textEditor.cpp
+@@ -144,18 +144,18 @@ void TextEditor::keyPressed(const SDL_Event &event)
+       // Reset timer
+       resetTimer();
+       // Open action menu
+-      Dialog dialog(_("Actions:"));
+-      dialog.addOption(_("Save"), 0, g_iconFloppy);
++      Dialog dialog(_("操作:"));
++      dialog.addOption(_("保存"), 0, g_iconFloppy);
+       if (m_textSelectionStart.y != -1 && m_textSelectionEnd.y != -1 && (m_textSelectionStart.x != m_textSelectionEnd.x || m_textSelectionStart.y != m_textSelectionEnd.y))
+       {
+-         dialog.addOption(_("Copy"), 4, g_iconCopy);
+-         dialog.addOption(_("Cut"), 5, g_iconCut);
++         dialog.addOption(_("复制"), 4, g_iconCopy);
++         dialog.addOption(_("剪切"), 5, g_iconCut);
+       }
+       if (! m_clipboard.empty())
+-         dialog.addOption(_("Paste"), 6, g_iconPaste);
+-      dialog.addOption(_("Delete line"), 1, g_iconTrash);
+-      dialog.addOption(_("Duplicate line"), 2, g_iconPlus);
+-      dialog.addOption(_("Quit"), 3, g_iconQuit);
++         dialog.addOption(_("粘贴"), 6, g_iconPaste);
++      dialog.addOption(_("删除行"), 1, g_iconTrash);
++      dialog.addOption(_("复制行"), 2, g_iconPlus);
++      dialog.addOption(_("退出"), 3, g_iconQuit);
+       switch (dialog.execute())
+       {
+          case 0: save(); break;
+@@ -415,9 +415,9 @@ void TextEditor::save(void)
+    std::ofstream ofs(m_title);
+    if (! ofs.is_open())
+    {
+-      Dialog dialog(_("Error:"));
+-      dialog.addLabel(_("Unable to write file."));
+-      dialog.addOption(_("OK"), 0, g_iconSelect);
++      Dialog dialog(_("错误:"));
++      dialog.addLabel(_("无法写入文件。"));
++      dialog.addOption(_("确定"), 0, g_iconSelect);
+       return;
+    }
+    // Write new file
+@@ -438,11 +438,11 @@ void TextEditor::quit(void)
+ {
+    if (m_hasModifications)
+    {
+-      Dialog dialog(_("Warning:"));
+-      dialog.addLabel(_("The file is not saved."));
+-      dialog.addOption(_("Save"), 0, g_iconFloppy);
+-      dialog.addOption(_("Don't save"), 1, g_iconNone);
+-      dialog.addOption(_("Cancel"), 2, g_iconCancel);
++      Dialog dialog(_("警告:"));
++      dialog.addLabel(_("该文件未保存。"));
++      dialog.addOption(_("保存"), 0, g_iconFloppy);
++      dialog.addOption(_("不保存"), 1, g_iconNone);
++      dialog.addOption(_("取消"), 2, g_iconCancel);
+       switch (dialog.execute())
+       {
+          case 0: save(); break;
