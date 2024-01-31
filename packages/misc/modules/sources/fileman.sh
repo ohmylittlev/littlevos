@@ -7,4 +7,4 @@
 . /etc/profile
 jslisten set "FileMan"
 
-LANG=$(get_setting system.language) fileman
+LANG=$(get_setting system.language) fileman $(fbwidth) $(fbheight)

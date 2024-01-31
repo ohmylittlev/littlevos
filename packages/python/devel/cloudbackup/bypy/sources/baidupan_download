@@ -1,0 +1,39 @@
+#!/bin/bash
+# SPDX-License-Identifier: GPL-2.0
+# Copyright (C) 2023 JELOS (https://github.com/ohmylittlev)
+
+# check token
+if [ ! -f "/storage/.bypy/bypy.json" ]; then
+    echo -e "Not authorized, please do baidu cloud authorization first!" 2>&1
+    sleep 3
+    clear && exit
+fi
+
+if [ $(( $(date +%s) - $(date -r /storage/.bypy/bypy.json +%s) )) -gt 2590000 ]; then
+    echo -e "The authorization is expired, please do baidu cloud authorization again!" 2>&1
+    sleep 3
+    clear && exit
+fi
+
+CONFIGPATH="/storage/.config"
+
+if [ -e "${CONFIGPATH}/baidupan.conf" ]
+then
+    source ${CONFIGPATH}/baidupan.conf
+fi
+
+ROMS_FOLDER="${ROMS_FOLDER:=/storage/roms}"
+BIOS_FOLDER="${BIOS_FOLDER:=/storage/roms/bios}"
+
+echo -e "=> ${OS_NAME} Baidu cloud save downloader\n"
+
+echo -e "This script will help you download your saves from baidu cloud." 2>&1
+
+echo -e "Start downloading" 2>&1
+remote_path=roms
+LANG=zh_CN.UTF-8 python -m bypy download "${remote_path}" "${ROMS_FOLDER}"
+
+echo -e "\nAll saves downloaded" 2>&1
+
+sleep 3
+clear

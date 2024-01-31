@@ -1,8 +1,8 @@
 diff --git a/locale/lang/zh_CN/LC_MESSAGES/emulationstation2.po b/locale/lang/zh_CN/LC_MESSAGES/emulationstation2.po
-index 51eb60c..d578818 100644
+index 51eb60c..7c654af 100644
 --- a/locale/lang/zh_CN/LC_MESSAGES/emulationstation2.po
 +++ b/locale/lang/zh_CN/LC_MESSAGES/emulationstation2.po
-@@ -10,6 +10,276 @@ msgstr ""
+@@ -10,6 +10,285 @@ msgstr ""
  "X-Generator: Poedit 2.2.3\n"
  "Plural-Forms: nplurals=1; plural=0;\n"
  
@@ -51,11 +51,20 @@ index 51eb60c..d578818 100644
 +msgid "NETWORK SERVICES"
 +msgstr "网络服务"
 +
++msgid "CLOUD SERVICES"
++msgstr "云服务"
++
++msgid "VPN SERVICES"
++msgstr "VPN 服务"
++
 +msgid "ENABLE SSH"
 +msgstr "开启 SSH"
 +
 +msgid "ENABLE SAMBA"
 +msgstr "开启 SAMBA"
++
++msgid "ENABLE SIMPLE HTTP SERVER"
++msgstr "开启简单 HTTP 服务器"
 +
 +msgid "QUIT CURRENT GAME"
 +msgstr "退出当前游戏"
@@ -279,7 +288,7 @@ index 51eb60c..d578818 100644
  msgid "UPDATE AVAILABLE"
  msgstr "发现可用更新"
  
-@@ -17,13 +287,13 @@ msgid "Name"
+@@ -17,13 +296,13 @@ msgid "Name"
  msgstr "游戏名"
  
  msgid "this game's name"
@@ -295,7 +304,7 @@ index 51eb60c..d578818 100644
  
  msgid "Emulator"
  msgstr "模拟器"
-@@ -53,7 +323,7 @@ msgid "Logo"
+@@ -53,7 +332,7 @@ msgid "Logo"
  msgstr "Logo"
  
  msgid "enter path to logo"
@@ -304,7 +313,7 @@ index 51eb60c..d578818 100644
  
  msgid "Box"
  msgstr "盒子"
-@@ -80,10 +350,10 @@ msgid "enter path to manual"
+@@ -80,10 +359,10 @@ msgid "enter path to manual"
  msgstr "输入手册路径"
  
  msgid "Magazine"
@@ -317,7 +326,7 @@ index 51eb60c..d578818 100644
  
  msgid "Map"
  msgstr "地图"
-@@ -104,10 +374,10 @@ msgid "enter path to alt boxart"
+@@ -104,10 +383,10 @@ msgid "enter path to alt boxart"
  msgstr "输入包装盒封面路径"
  
  msgid "Box backside"
@@ -330,7 +339,7 @@ index 51eb60c..d578818 100644
  
  msgid "Wheel"
  msgstr "商标"
-@@ -137,13 +407,13 @@ msgid "Developer"
+@@ -137,13 +416,13 @@ msgid "Developer"
  msgstr "开发者"
  
  msgid "this game's developer"
@@ -346,7 +355,7 @@ index 51eb60c..d578818 100644
  
  msgid "Genre"
  msgstr "游戏类型"
-@@ -152,28 +422,28 @@ msgid "enter game genre"
+@@ -152,28 +431,28 @@ msgid "enter game genre"
  msgstr "输入游戏类型"
  
  msgid "Game family"
@@ -381,7 +390,7 @@ index 51eb60c..d578818 100644
  
  msgid "Favorite"
  msgstr "收藏"
-@@ -209,13 +479,13 @@ msgid "Crc32"
+@@ -209,13 +488,13 @@ msgid "Crc32"
  msgstr "CRC32"
  
  msgid "Crc32 checksum"
@@ -397,7 +406,7 @@ index 51eb60c..d578818 100644
  
  msgid "Game time"
  msgstr "游戏时间"
-@@ -227,25 +497,25 @@ msgid "Languages"
+@@ -227,25 +506,25 @@ msgid "Languages"
  msgstr "语言"
  
  msgid "this game's languages"
@@ -430,7 +439,7 @@ index 51eb60c..d578818 100644
  
  msgid "all games"
  msgstr "全部游戏"
-@@ -266,16 +536,16 @@ msgid "never played"
+@@ -266,16 +545,16 @@ msgid "never played"
  msgstr "从未玩过的"
  
  msgid "retroachievements"
@@ -450,7 +459,7 @@ index 51eb60c..d578818 100644
  
  msgid "collections"
  msgstr "合辑"
-@@ -301,7 +571,7 @@ msgstr "多开发商"
+@@ -301,7 +580,7 @@ msgstr "多开发商"
  #, c-format
  msgid "This collection contains %i game:%s"
  msgid_plural "This collection contains %i games, including:%s"
@@ -459,7 +468,7 @@ index 51eb60c..d578818 100644
  
  msgid "SCANNING BLUETOOTH"
  msgstr "正在扫描蓝牙设备"
-@@ -313,16 +583,16 @@ msgid "BLUETOOTH SCAN IS ALREADY RUNNING."
+@@ -313,16 +592,16 @@ msgid "BLUETOOTH SCAN IS ALREADY RUNNING."
  msgstr "蓝牙扫描已在运行。"
  
  msgid "FORMATTING DEVICE"
@@ -479,7 +488,7 @@ index 51eb60c..d578818 100644
  
  msgid "DOWNLOADING"
  msgstr "下载中"
-@@ -340,7 +610,7 @@ msgid "BEZELS INSTALLED SUCCESSFULLY"
+@@ -340,7 +619,7 @@ msgid "BEZELS INSTALLED SUCCESSFULLY"
  msgstr "框架安装成功"
  
  msgid "BEZELS UNINSTALLED SUCCESSFULLY"
@@ -488,7 +497,7 @@ index 51eb60c..d578818 100644
  
  msgid "PACKAGE INSTALLED SUCCESSFULLY"
  msgstr "包安装成功"
-@@ -445,10 +715,10 @@ msgid "SHOW SYSTEM NAME IN COLLECTIONS"
+@@ -445,10 +724,10 @@ msgid "SHOW SYSTEM NAME IN COLLECTIONS"
  msgstr "在合辑中显示系统名称"
  
  msgid "SHOW GAMES OF HIDDEN SYSTEMS IN COLLECTIONS"
@@ -501,7 +510,7 @@ index 51eb60c..d578818 100644
  
  msgid "Loading..."
  msgstr "载入中..."
-@@ -460,7 +730,7 @@ msgid "AUTOMATIC COLLECTIONS"
+@@ -460,7 +739,7 @@ msgid "AUTOMATIC COLLECTIONS"
  msgstr "自动合辑"
  
  msgid "PER GENRE"
@@ -510,7 +519,7 @@ index 51eb60c..d578818 100644
  
  msgid "ARCADE SYSTEMS"
  msgstr "游戏系统"
-@@ -485,16 +755,16 @@ msgid "%d%% (%d of %d)"
+@@ -485,16 +764,16 @@ msgid "%d%% (%d of %d)"
  msgstr ""
  
  msgid "RETROACHIEVEMENTS"
@@ -531,7 +540,7 @@ index 51eb60c..d578818 100644
  
  msgid "LAUNCH"
  msgstr "启动"
-@@ -515,10 +785,10 @@ msgid "NAVIGATION"
+@@ -515,10 +794,10 @@ msgid "NAVIGATION"
  msgstr "导航"
  
  msgid "JUMP TO GAME BEGINNING WITH THE LETTER"
@@ -544,7 +553,7 @@ index 51eb60c..d578818 100644
  
  msgid "SORT GAMES BY"
  msgstr "游戏排序方式"
-@@ -539,10 +809,10 @@ msgid "automatic"
+@@ -539,10 +818,10 @@ msgid "automatic"
  msgstr "自动"
  
  msgid "VIEW CUSTOMIZATION"
@@ -557,7 +566,7 @@ index 51eb60c..d578818 100644
  
  msgid "ADVANCED SYSTEM OPTIONS"
  msgstr "高级系统选项"
-@@ -554,7 +824,7 @@ msgid "FILTER GAMES BY TEXT"
+@@ -554,7 +833,7 @@ msgid "FILTER GAMES BY TEXT"
  msgstr "用文本筛选游戏"
  
  msgid "THIS FUNCTION IS DISABLED WHILE THE SCRAPER IS RUNNING"
@@ -566,7 +575,7 @@ index 51eb60c..d578818 100644
  
  msgid "CLOSE"
  msgstr "关闭"
-@@ -575,7 +845,7 @@ msgid "CONNECT TO NETPLAY"
+@@ -575,7 +854,7 @@ msgid "CONNECT TO NETPLAY"
  msgstr "联网游戏"
  
  msgid "Select a game lobby to join"
@@ -575,7 +584,7 @@ index 51eb60c..d578818 100644
  
  msgid "REFRESH"
  msgstr "刷新"
-@@ -602,7 +872,7 @@ msgid "UNAVAILABLE GAMES"
+@@ -602,7 +881,7 @@ msgid "UNAVAILABLE GAMES"
  msgstr "无法运行的游戏"
  
  msgid "NO GAMES FOUND"
@@ -584,7 +593,7 @@ index 51eb60c..d578818 100644
  
  msgid "JOIN GAME"
  msgstr "加入游戏"
-@@ -611,7 +881,7 @@ msgid "WATCH GAME"
+@@ -611,7 +890,7 @@ msgid "WATCH GAME"
  msgstr "观看游戏"
  
  msgid "INPUT MANUALLY"
@@ -593,7 +602,7 @@ index 51eb60c..d578818 100644
  
  msgid "NO WI-FI NETWORKS FOUND"
  msgstr "未发现可用的WIFI网络"
-@@ -620,7 +890,7 @@ msgid "SEARCHING WI-FI NETWORKS"
+@@ -620,7 +899,7 @@ msgid "SEARCHING WI-FI NETWORKS"
  msgstr "正在查询WIFI网络"
  
  msgid "FORGET A BLUETOOTH DEVICE"
@@ -602,7 +611,7 @@ index 51eb60c..d578818 100644
  
  msgid "REMOVE ALL"
  msgstr "移除所有"
-@@ -629,19 +899,19 @@ msgid "NO BLUETOOTH DEVICES FOUND"
+@@ -629,19 +908,19 @@ msgid "NO BLUETOOTH DEVICES FOUND"
  msgstr "未发现蓝牙设备"
  
  msgid "BLUETOOTH DEVICES HAVE BEEN DELETED."
@@ -626,7 +635,7 @@ index 51eb60c..d578818 100644
  
  msgid "SELECT"
  msgstr "选择"
-@@ -653,10 +923,10 @@ msgid "CONTENT DOWNLOADER"
+@@ -653,10 +932,10 @@ msgid "CONTENT DOWNLOADER"
  msgstr "下载内容"
  
  msgid "SELECT CONTENT TO INSTALL/REMOVE"
@@ -639,7 +648,7 @@ index 51eb60c..d578818 100644
  
  msgid "No items"
  msgstr "在此视角下没东西"
-@@ -675,7 +945,7 @@ msgid "REMOVE"
+@@ -675,7 +954,7 @@ msgid "REMOVE"
  msgstr "卸载"
  
  msgid "UNINSTALLATION ADDED TO QUEUE"
@@ -648,7 +657,7 @@ index 51eb60c..d578818 100644
  
  msgid "INSTALL"
  msgstr "安装"
-@@ -685,13 +955,13 @@ msgid "CURRENTLY IN DOWNLOAD QUEUE"
+@@ -685,13 +964,13 @@ msgid "CURRENTLY IN DOWNLOAD QUEUE"
  msgstr "当前下载排队"
  
  msgid "NO MISSING BIOS FILES"
@@ -665,7 +674,7 @@ index 51eb60c..d578818 100644
  
  msgid "dim"
  msgstr "暗灰"
-@@ -742,7 +1012,7 @@ msgid "RANDOM VIDEO SCREENSAVER SETTINGS"
+@@ -742,7 +1021,7 @@ msgid "RANDOM VIDEO SCREENSAVER SETTINGS"
  msgstr "屏保-随机视频设置"
  
  msgid "VIDEO DURATION (SECS)"
@@ -674,7 +683,7 @@ index 51eb60c..d578818 100644
  
  msgid "USE OMX PLAYER FOR SCREENSAVER"
  msgstr "屏保使用 OMX 播放器"
-@@ -754,10 +1024,10 @@ msgid "USE MARQUEE AS GAME INFO"
+@@ -754,10 +1033,10 @@ msgid "USE MARQUEE AS GAME INFO"
  msgstr "使用悬浮蒙版图片作为游戏信息"
  
  msgid "DECORATION SET USED"
@@ -687,7 +696,7 @@ index 51eb60c..d578818 100644
  
  msgid "MUTE VIDEO AUDIO"
  msgstr "视频静音"
-@@ -772,16 +1042,16 @@ msgid "CUSTOM VIDEO DIRECTORY"
+@@ -772,16 +1051,16 @@ msgid "CUSTOM VIDEO DIRECTORY"
  msgstr "自定视频路径"
  
  msgid "USE VIDEOS IN SUBFOLDERS OF CUSTOM DIRECTORY"
@@ -708,7 +717,7 @@ index 51eb60c..d578818 100644
  
  msgid "STRETCH IMAGES"
  msgstr "拉伸图像"
-@@ -793,10 +1063,10 @@ msgid "CUSTOM IMAGE DIRECTORY"
+@@ -793,10 +1072,10 @@ msgid "CUSTOM IMAGE DIRECTORY"
  msgstr "自定图像目录"
  
  msgid "USE IMAGES IN SUBFOLDERS OF CUSTOM DIRECTORY"
@@ -721,7 +730,7 @@ index 51eb60c..d578818 100644
  
  msgid "PAD TO KEYBOARD CONFIGURATION"
  msgstr "pad到键盘自动以"
-@@ -817,10 +1087,10 @@ msgid "PLAYER 2"
+@@ -817,10 +1096,10 @@ msgid "PLAYER 2"
  msgstr "玩家二"
  
  msgid "PLAYER 3"
@@ -734,7 +743,7 @@ index 51eb60c..d578818 100644
  
  msgid "COMBINATIONS"
  msgstr "组合键"
-@@ -851,10 +1121,10 @@ msgstr "确定吗？"
+@@ -851,10 +1130,10 @@ msgstr "确定吗？"
  
  #, c-format
  msgid "UPDATING %s"
@@ -747,7 +756,7 @@ index 51eb60c..d578818 100644
  
  msgid "UPDATE IS READY"
  msgstr "更新已准备就绪"
-@@ -870,6 +1140,8 @@ msgid ""
+@@ -870,6 +1149,8 @@ msgid ""
  "YOU ARE CURRENTLY USING VERSION %s\n"
  "DO YOU WANT TO UPDATE TO VERSION %s?"
  msgstr ""
@@ -756,7 +765,7 @@ index 51eb60c..d578818 100644
  
  msgid "NETWORK CONNECTION NEEDED"
  msgstr "需要连接到互联网"
-@@ -893,73 +1165,73 @@ msgid "INVALID PARAMETERS"
+@@ -893,73 +1174,73 @@ msgid "INVALID PARAMETERS"
  msgstr "参数无效"
  
  msgid "GAME MEDIA"
@@ -851,7 +860,7 @@ index 51eb60c..d578818 100644
  
  msgid ""
  "THIS WILL DELETE THE ACTUAL GAME FILE(S)!\n"
-@@ -969,30 +1241,30 @@ msgstr ""
+@@ -969,30 +1250,30 @@ msgstr ""
  "确定执行吗?"
  
  msgid "COLLECTIONS"
@@ -888,7 +897,7 @@ index 51eb60c..d578818 100644
  
  msgid "ADVANCED GAME OPTIONS"
  msgstr "高级游戏选项"
-@@ -1007,57 +1279,57 @@ msgid "THEMES DOWNLOADER"
+@@ -1007,57 +1288,57 @@ msgid "THEMES DOWNLOADER"
  msgstr "主题下载"
  
  msgid "SELECT THEMES TO INSTALL/REMOVE"
@@ -962,7 +971,7 @@ index 51eb60c..d578818 100644
  
  msgid "START"
  msgstr "开始"
-@@ -1067,6 +1339,9 @@ msgid ""
+@@ -1067,6 +1348,9 @@ msgid ""
  "MAY BE FOR DIFFERENT SYSTEMS!\n"
  "CONTINUE ANYWAY?"
  msgstr ""
@@ -972,7 +981,7 @@ index 51eb60c..d578818 100644
  
  msgid "SCRAPING IS RUNNING. DO YOU WANT TO STOP IT?"
  msgstr "抓取进行中"
-@@ -1075,10 +1350,10 @@ msgid "NO GAMES FIT THAT CRITERIA."
+@@ -1075,10 +1359,10 @@ msgid "NO GAMES FIT THAT CRITERIA."
  msgstr "没有匹配的游戏。"
  
  msgid "THE BEZEL PROJECT"
@@ -985,7 +994,7 @@ index 51eb60c..d578818 100644
  
  msgid "fade"
  msgstr "淡出"
-@@ -1099,7 +1374,7 @@ msgid "Architecture"
+@@ -1099,7 +1383,7 @@ msgid "Architecture"
  msgstr "结构"
  
  msgid "Disk format"
@@ -994,7 +1003,7 @@ index 51eb60c..d578818 100644
  
  msgid "Temperature"
  msgstr "温度"
-@@ -1111,7 +1386,7 @@ msgid "Battery"
+@@ -1111,7 +1395,7 @@ msgid "Battery"
  msgstr "电池"
  
  msgid "Model"
@@ -1003,7 +1012,7 @@ index 51eb60c..d578818 100644
  
  msgid "Cpu model"
  msgstr "CPU 型号"
-@@ -1144,25 +1419,25 @@ msgid "FLATTEN-GLOW"
+@@ -1144,25 +1428,25 @@ msgid "FLATTEN-GLOW"
  msgstr "FLATTEN-GLOW 着色器集"
  
  msgid "RGA SCALING"
@@ -1035,7 +1044,7 @@ index 51eb60c..d578818 100644
  
  msgid "MAIN MENU"
  msgstr "主菜单"
-@@ -1171,10 +1446,10 @@ msgid "KODI MEDIA CENTER"
+@@ -1171,10 +1455,10 @@ msgid "KODI MEDIA CENTER"
  msgstr "KODI 媒体中心"
  
  msgid "GAME SETTINGS"
@@ -1048,7 +1057,7 @@ index 51eb60c..d578818 100644
  
  msgid "SOUND SETTINGS"
  msgstr "声音设置"
-@@ -1207,13 +1482,13 @@ msgid "QUIT"
+@@ -1207,13 +1491,13 @@ msgid "QUIT"
  msgstr "退出"
  
  msgid "SCRAPER IS RUNNING. DO YOU WANT TO STOP IT?"
@@ -1065,7 +1074,7 @@ index 51eb60c..d578818 100644
  
  msgid "IMAGE SOURCE"
  msgstr "图片数据"
-@@ -1261,10 +1536,10 @@ msgid "SCRAPE FANART"
+@@ -1261,10 +1545,10 @@ msgid "SCRAPE FANART"
  msgstr "抓取同人作品"
  
  msgid "SCRAPE BOX BACKSIDE"
@@ -1078,7 +1087,7 @@ index 51eb60c..d578818 100644
  
  msgid "SCRAPE MANUAL"
  msgstr "抓取手册"
-@@ -1279,16 +1554,16 @@ msgid "PASSWORD"
+@@ -1279,16 +1563,16 @@ msgid "PASSWORD"
  msgstr "密码"
  
  msgid "ARE YOU SURE YOU WANT TO CONFIGURE THE INPUT?"
@@ -1098,7 +1107,7 @@ index 51eb60c..d578818 100644
  
  msgid "USER DISK USAGE"
  msgstr "用户磁盘使用"
-@@ -1300,7 +1575,7 @@ msgid "SYSTEM"
+@@ -1300,7 +1584,7 @@ msgid "SYSTEM"
  msgstr "系统"
  
  msgid "VIDEO DRIVER"
@@ -1107,7 +1116,7 @@ index 51eb60c..d578818 100644
  
  msgid "DEVELOPER"
  msgstr "开发者选项"
-@@ -1321,20 +1596,20 @@ msgid "OVERSCAN"
+@@ -1321,20 +1605,20 @@ msgid "OVERSCAN"
  msgstr "过扫描"
  
  msgid "USE OMX PLAYER (HARDWARE ACCELERATED)"
@@ -1132,7 +1141,7 @@ index 51eb60c..d578818 100644
  
  msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
  msgstr "需要重新启动系统才能应用新配置"
-@@ -1349,10 +1624,10 @@ msgid "CREATE A SUPPORT FILE?"
+@@ -1349,10 +1633,10 @@ msgid "CREATE A SUPPORT FILE?"
  msgstr "是否创建支持文件?"
  
  msgid "SUPPORT FILE CREATED IN SAVES FOLDER"
@@ -1145,7 +1154,7 @@ index 51eb60c..d578818 100644
  
  msgid "FORMAT A DISK"
  msgstr "格式化磁盘"
-@@ -1364,28 +1639,28 @@ msgid "Cleaning"
+@@ -1364,28 +1648,28 @@ msgid "Cleaning"
  msgstr "清理中"
  
  msgid "CLEAR CACHES"
@@ -1180,7 +1189,7 @@ index 51eb60c..d578818 100644
  
  msgid "ENABLE FILTERS"
  msgstr "启用筛选器"
-@@ -1412,13 +1687,13 @@ msgid "ON-SCREEN KEYBOARD"
+@@ -1412,13 +1696,13 @@ msgid "ON-SCREEN KEYBOARD"
  msgstr "虚拟键盘"
  
  msgid "HIDE EMULATIONSTATION WHEN RUNNING A GAME"
@@ -1196,7 +1205,7 @@ index 51eb60c..d578818 100644
  
  msgid "AUTO"
  msgstr "自动"
-@@ -1427,18 +1702,20 @@ msgid "AUTOCONFIGURE EMULATORS CONTROLLERS"
+@@ -1427,18 +1711,20 @@ msgid "AUTOCONFIGURE EMULATORS CONTROLLERS"
  msgstr "自动配置模拟的控制设备"
  
  msgid "SWITCH A & B BUTTONS IN EMULATIONSTATION"
@@ -1220,7 +1229,7 @@ index 51eb60c..d578818 100644
  
  msgid "SHOW NETWORK INDICATOR"
  msgstr "显示网络标识"
-@@ -1447,16 +1724,16 @@ msgid "OPTIMIZATIONS"
+@@ -1447,16 +1733,16 @@ msgid "OPTIMIZATIONS"
  msgstr "优化"
  
  msgid "PRELOAD UI ELEMENTS"
@@ -1241,7 +1250,7 @@ index 51eb60c..d578818 100644
  
  msgid "THREADED LOADING"
  msgstr "线程载入中"
-@@ -1465,10 +1742,10 @@ msgid "ASYNC IMAGE LOADING"
+@@ -1465,10 +1751,10 @@ msgid "ASYNC IMAGE LOADING"
  msgstr "异步图像载入中"
  
  msgid "OPTIMIZE IMAGES VRAM USE"
@@ -1254,7 +1263,7 @@ index 51eb60c..d578818 100644
  
  msgid "DOWNLOADS"
  msgstr "资料下载"
-@@ -1492,43 +1769,46 @@ msgid "START UPDATE"
+@@ -1492,43 +1778,46 @@ msgid "START UPDATE"
  msgstr "开始更新"
  
  msgid "UPDATER IS ALREADY RUNNING"
@@ -1310,7 +1319,7 @@ index 51eb60c..d578818 100644
  
  msgid "Do you want to proceed?"
  msgstr "是否继续?"
-@@ -1540,7 +1820,7 @@ msgid "ENABLE KODI"
+@@ -1540,7 +1829,7 @@ msgid "ENABLE KODI"
  msgstr "启用 KODI"
  
  msgid "LAUNCH KODI AT BOOT"
@@ -1319,7 +1328,7 @@ index 51eb60c..d578818 100644
  
  msgid "HARDWARE"
  msgstr "硬件"
-@@ -1555,40 +1835,40 @@ msgid "AUDIO OUTPUT"
+@@ -1555,40 +1844,40 @@ msgid "AUDIO OUTPUT"
  msgstr "音频输出"
  
  msgid "AUDIO PROFILE"
@@ -1372,7 +1381,7 @@ index 51eb60c..d578818 100644
  
  msgid "NETPLAY SETTINGS"
  msgstr "联网游戏设置"
-@@ -1606,40 +1886,40 @@ msgid "OFF"
+@@ -1606,40 +1895,40 @@ msgid "OFF"
  msgstr "关"
  
  msgid "BUTTON LED COLOR"
@@ -1425,7 +1434,7 @@ index 51eb60c..d578818 100644
  
  msgid "OVERCLOCK"
  msgstr "超频"
-@@ -1693,25 +1973,25 @@ msgid "AUTOMATIC SCREENSHOT"
+@@ -1693,25 +1982,25 @@ msgid "AUTOMATIC SCREENSHOT"
  msgstr "自动截图"
  
  msgid "RETROACHIEVEMENT UNLOCK SOUND"
@@ -1457,7 +1466,7 @@ index 51eb60c..d578818 100644
  
  msgid "ENABLE NETPLAY"
  msgstr "启用联网游戏"
-@@ -1726,37 +2006,40 @@ msgid "USE RELAY SERVER"
+@@ -1726,37 +2015,40 @@ msgid "USE RELAY SERVER"
  msgstr "使用中继服务"
  
  msgid "DECORATION SET"
@@ -1507,7 +1516,7 @@ index 51eb60c..d578818 100644
  
  msgid "SHADER SET"
  msgstr "着色器设置"
-@@ -1768,43 +2051,43 @@ msgid "STRETCH BEZELS (4K & ULTRAWIDE)"
+@@ -1768,43 +2060,43 @@ msgid "STRETCH BEZELS (4K & ULTRAWIDE)"
  msgstr "弹性挡板（4K和超宽）"
  
  msgid "SHOW CONTROLLER OVERLAYS"
@@ -1562,7 +1571,7 @@ index 51eb60c..d578818 100644
  
  msgid "PAUSE ON TRANSLATED SCREEN"
  msgstr "翻译时暂停"
-@@ -1816,10 +2099,10 @@ msgid "GAME HASHING IS RUNNING. DO YOU WANT TO STOP IT?"
+@@ -1816,10 +2108,10 @@ msgid "GAME HASHING IS RUNNING. DO YOU WANT TO STOP IT?"
  msgstr "正在效验游戏.你想停止吗?"
  
  msgid "REALLY UPDATE GAMELISTS?"
@@ -1575,7 +1584,7 @@ index 51eb60c..d578818 100644
  
  msgid ""
  "YOU ARE GOING TO MAP A CONTROLLER. MAP BASED ON THE BUTTON'S POSITION "
-@@ -1828,13 +2111,18 @@ msgid ""
+@@ -1828,13 +2120,18 @@ msgid ""
  "BUTTONS/STICKS YOU DO NOT HAVE BY HOLDING ANY KEY. PRESS THE SOUTH BUTTON TO "
  "CONFIRM WHEN DONE."
  msgstr ""
@@ -1596,7 +1605,7 @@ index 51eb60c..d578818 100644
  
  msgid "default"
  msgstr "默认"
-@@ -1843,10 +2131,10 @@ msgid "SHOW CONTROLLER ACTIVITY"
+@@ -1843,10 +2140,10 @@ msgid "SHOW CONTROLLER ACTIVITY"
  msgstr "显示控制器活动"
  
  msgid "SHOW CONTROLLER BATTERY LEVEL"
@@ -1609,7 +1618,7 @@ index 51eb60c..d578818 100644
  
  msgid "THEME CONFIGURATION"
  msgstr "主题配置"
-@@ -1891,19 +2179,19 @@ msgid "SHOW '..' PARENT FOLDER"
+@@ -1891,19 +2188,19 @@ msgid "SHOW '..' PARENT FOLDER"
  msgstr "显示 '..' 父文件夹"
  
  msgid "BEFORE NAME"
@@ -1634,7 +1643,7 @@ index 51eb60c..d578818 100644
  
  msgid "SHOW FILENAMES INSTEAD"
  msgstr "在列表中显示文件名"
-@@ -1912,10 +2200,10 @@ msgid "FILE EXTENSIONS"
+@@ -1912,10 +2209,10 @@ msgid "FILE EXTENSIONS"
  msgstr "文件扩展名"
  
  msgid "RESET CUSTOMIZATIONS"
@@ -1647,7 +1656,7 @@ index 51eb60c..d578818 100644
  
  msgid "THEME SET"
  msgstr "主题设置"
-@@ -1945,13 +2233,13 @@ msgid "SHOW BATTERY STATUS"
+@@ -1945,13 +2242,13 @@ msgid "SHOW BATTERY STATUS"
  msgstr "显示电池状态"
  
  msgid "ICON"
@@ -1664,7 +1673,7 @@ index 51eb60c..d578818 100644
  
  msgid "VOLUME"
  msgstr "音量"
-@@ -2038,7 +2326,7 @@ msgid "LAUNCH SCREENSAVER"
+@@ -2038,7 +2335,7 @@ msgid "LAUNCH SCREENSAVER"
  msgstr "启动屏保"
  
  msgid "VIEW USER'S MANUAL"
@@ -1673,7 +1682,7 @@ index 51eb60c..d578818 100644
  
  msgid "VIEW BATOCERA MANUAL"
  msgstr "查看BATOCERA手册"
-@@ -2085,14 +2373,11 @@ msgstr "大屏幕"
+@@ -2085,14 +2382,11 @@ msgstr "大屏幕"
  msgid "SIDE BY SIDE"
  msgstr "并排"
  
@@ -1690,7 +1699,7 @@ index 51eb60c..d578818 100644
  
  msgid "FORMAT DEVICE"
  msgstr "格式化装置"
-@@ -2116,30 +2401,32 @@ msgid "EDIT METADATA"
+@@ -2116,30 +2410,32 @@ msgid "EDIT METADATA"
  msgstr "编辑元数据"
  
  msgid "GENRES"
@@ -1729,7 +1738,7 @@ index 51eb60c..d578818 100644
  
  msgid "SYSTEM INFO"
  msgstr "系统信息"
-@@ -2151,10 +2438,10 @@ msgid "QUICK SEARCH"
+@@ -2151,10 +2447,10 @@ msgid "QUICK SEARCH"
  msgstr "迅速搜"
  
  msgid "GO TO LETTER"
@@ -1742,7 +1751,7 @@ index 51eb60c..d578818 100644
  
  msgid "GO TO HARDWARE"
  msgstr ""
-@@ -2163,7 +2450,7 @@ msgid "GO TO DECADE"
+@@ -2163,7 +2459,7 @@ msgid "GO TO DECADE"
  msgstr ""
  
  msgid "CONFIGURATION"
@@ -1751,7 +1760,7 @@ index 51eb60c..d578818 100644
  
  #, c-format
  msgid "%i COLLECTION"
-@@ -2191,27 +2478,33 @@ msgid ""
+@@ -2191,27 +2487,33 @@ msgid ""
  "FORMAT.\n"
  "DO YOU WANT TO LAUNCH IT ANYWAY?"
  msgstr ""
@@ -1789,7 +1798,7 @@ index 51eb60c..d578818 100644
  
  msgid "Kiosk"
  msgstr "大厅"
-@@ -2240,12 +2533,14 @@ msgid "GAME OPTIONS"
+@@ -2240,12 +2542,14 @@ msgid "GAME OPTIONS"
  msgstr "游戏设置"
  
  msgid "FAVORITE"
@@ -1805,7 +1814,7 @@ index 51eb60c..d578818 100644
  
  msgid "Searching"
  msgstr "搜索中"
-@@ -2347,16 +2642,16 @@ msgid "GAME TIME, DESCENDING"
+@@ -2347,16 +2651,16 @@ msgid "GAME TIME, DESCENDING"
  msgstr "游戏时间，降序"
  
  msgid "SYSTEM, RELEASE YEAR, ASCENDING"
@@ -1826,7 +1835,7 @@ index 51eb60c..d578818 100644
  
  msgid "A,AN,THE"
  msgstr ""
-@@ -2365,16 +2660,16 @@ msgid "Extracting"
+@@ -2365,16 +2669,16 @@ msgid "Extracting"
  msgstr "提取中"
  
  msgid "SEARCHING RETROACHIEVEMENTS"
@@ -1847,7 +1856,7 @@ index 51eb60c..d578818 100644
  
  msgid "GENRE"
  msgstr "类型"
-@@ -2386,13 +2681,13 @@ msgid "PLAYERS"
+@@ -2386,13 +2690,13 @@ msgid "PLAYERS"
  msgstr "玩家数"
  
  msgid "PUBLISHER/DEVELOPER"
@@ -1863,7 +1872,7 @@ index 51eb60c..d578818 100644
  
  msgid "REGION"
  msgstr "区域"
-@@ -2404,10 +2699,10 @@ msgid "ALREADY PLAYED"
+@@ -2404,10 +2708,10 @@ msgid "ALREADY PLAYED"
  msgstr "玩过的游戏"
  
  msgid "HAS ACHIEVEMENTS"
@@ -1876,7 +1885,7 @@ index 51eb60c..d578818 100644
  
  msgid "SCRAPING"
  msgstr "抓取"
-@@ -2416,15 +2711,15 @@ msgid "SCRAPE FAILED"
+@@ -2416,15 +2720,15 @@ msgid "SCRAPE FAILED"
  msgstr "抓取失败"
  
  msgid "SCRAPING FINISHED"
@@ -1895,7 +1904,7 @@ index 51eb60c..d578818 100644
  
  msgid "SHIFTS FOR UPPER,LOWER, AND SPECIAL"
  msgstr "SHIFT键可切换大小写或特殊字符"
-@@ -2451,28 +2746,28 @@ msgid "RIGHT"
+@@ -2451,28 +2755,28 @@ msgid "RIGHT"
  msgstr "右"
  
  msgid "LEFT ANALOG UP"
@@ -1932,7 +1941,7 @@ index 51eb60c..d578818 100644
  
  msgid "HOTKEY"
  msgstr "热键"
-@@ -2500,12 +2795,14 @@ msgid ""
+@@ -2500,12 +2804,14 @@ msgid ""
  "NO HOTKEY BUTTON HAS BEEN ASSIGNED. THIS IS REQUIRED FOR EXITING GAMES WITH "
  "A CONTROLLER. DO YOU WANT TO USE THE SELECT BUTTON AS YOUR HOTKEY?"
  msgstr ""
@@ -1949,7 +1958,7 @@ index 51eb60c..d578818 100644
  
  #, c-format
  msgid "HOLD FOR %iS TO SKIP"
-@@ -2536,7 +2833,7 @@ msgid "DISCARD CHANGES"
+@@ -2536,7 +2842,7 @@ msgid "DISCARD CHANGES"
  msgstr "放弃更改"
  
  msgid "up/down"
@@ -1958,7 +1967,7 @@ index 51eb60c..d578818 100644
  
  msgid "accept"
  msgstr "接受"
-@@ -2568,7 +2865,7 @@ msgid "EDIT"
+@@ -2568,7 +2874,7 @@ msgid "EDIT"
  msgstr "编辑"
  
  msgid "ENABLED"
@@ -1967,7 +1976,7 @@ index 51eb60c..d578818 100644
  
  #, c-format
  msgid "%d day ago"
-@@ -2606,10 +2903,10 @@ msgid "%d s"
+@@ -2606,10 +2912,10 @@ msgid "%d s"
  msgstr ""
  
  msgid "SCREEN READER ENABLED"
@@ -1980,7 +1989,7 @@ index 51eb60c..d578818 100644
  
  #~ msgid "PRELOAD UI"
  #~ msgstr "预加载UI"
-@@ -2679,7 +2976,7 @@ msgstr ""
+@@ -2679,7 +2985,7 @@ msgstr ""
  #~ msgstr "手动输入"
  
  #~ msgid "SELECT CONTENT TO INSTALL / REMOVE"
@@ -1989,7 +1998,7 @@ index 51eb60c..d578818 100644
  
  #~ msgid "UNINSTALL ADDED TO QUEUE"
  #~ msgstr "添加卸载到队伍"
-@@ -2709,7 +3006,7 @@ msgstr ""
+@@ -2709,7 +3015,7 @@ msgstr ""
  #~ msgstr "游戏媒体"
  
  #~ msgid "SELECT THEMES TO INSTALL / REMOVE"
@@ -1998,7 +2007,7 @@ index 51eb60c..d578818 100644
  
  #~ msgid "SCRAPE NOW"
  #~ msgstr "开始抓取"
-@@ -2778,7 +3075,7 @@ msgstr ""
+@@ -2778,7 +3084,7 @@ msgstr ""
  #~ "如果需要返回完整模式，请按顺序输入以下按键："
  
  #~ msgid "RETROACHIEVEMENTS SETTINGS"
@@ -2007,7 +2016,7 @@ index 51eb60c..d578818 100644
  
  #~ msgid "SHOW IN MAIN MENU"
  #~ msgstr "在主菜单中显示"
-@@ -2831,7 +3128,7 @@ msgstr ""
+@@ -2831,7 +3137,7 @@ msgstr ""
  #~ msgstr "外观"
  
  #~ msgid "PUBLISHER / DEVELOPER"
@@ -2016,7 +2025,7 @@ index 51eb60c..d578818 100644
  
  #~ msgid ""
  #~ "YOU DIDN'T CHOOSE A HOTKEY ENABLE BUTTON. THIS IS REQUIRED FOR EXITING "
-@@ -2859,7 +3156,7 @@ msgstr ""
+@@ -2859,7 +3165,7 @@ msgstr ""
  #~ msgstr "更新模拟器"
  
  #~ msgid "USE RETROARCH RGUI MENU"
@@ -2025,7 +2034,7 @@ index 51eb60c..d578818 100644
  
  #~ msgid "RESET GAMELIST CUSTOMISATIONS"
  #~ msgstr "重置自定游戏列表"
-@@ -2936,7 +3233,7 @@ msgstr ""
+@@ -2936,7 +3242,7 @@ msgstr ""
  #~ msgstr "合辑管理"
  
  #~ msgid "ADD/REMOVE GAMES TO THIS GAME COLLECTION"
@@ -2034,7 +2043,7 @@ index 51eb60c..d578818 100644
  
  #~ msgid "REINDEX ALL GAMES"
  #~ msgstr "重新索引所有游戏"
-@@ -3189,7 +3486,7 @@ msgstr ""
+@@ -3189,7 +3495,7 @@ msgstr ""
  #~ msgstr "背景音乐"
  
  #~ msgid "Editing the collection. Add/remove games with Y."
@@ -2043,7 +2052,7 @@ index 51eb60c..d578818 100644
  
  #~ msgid "Finished editing the collection."
  #~ msgstr "已完成对合辑的编辑"
-@@ -3210,7 +3507,7 @@ msgstr ""
+@@ -3210,7 +3516,7 @@ msgstr ""
  #~ msgstr "选择安装框架的游戏平台"
  
  #~ msgid "DISPLAY / HIDE SYSTEMS"
@@ -2052,7 +2061,7 @@ index 51eb60c..d578818 100644
  
  #~ msgid "Sort name"
  #~ msgstr "排序名"
-@@ -3363,3 +3660,4 @@ msgstr ""
+@@ -3363,3 +3669,4 @@ msgstr ""
  
  #~ msgid "UPDATE FAILED, THE SYSTEM WILL NOW REBOOT"
  #~ msgstr "更新失败，系统即将重启"

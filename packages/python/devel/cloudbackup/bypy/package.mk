@@ -22,4 +22,11 @@ make_target() {
 
 makeinstall_target() {
 	python3 setup.py install --root=${INSTALL} --prefix=/usr
+	mkdir -p ${INSTALL}/usr/bin/
+	cp baidupan_backup ${INSTALL}/usr/bin/
+	cp baidupan_download ${INSTALL}/usr/bin/
+	chmod 0755 ${INSTALL}/usr/bin/*
+	mkdir -p ${INSTALL}/usr/config/modules
+	ln -sf /usr/bin/baidupan_backup ${INSTALL}/usr/config/modules/baidupan_backup.sh
+	ln -sf /usr/bin/baidupan_download ${INSTALL}/usr/config/modules/baidupan_download.sh
 }

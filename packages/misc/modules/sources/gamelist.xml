@@ -37,9 +37,9 @@
         <image>./images/portmaster.svg</image>
     </game>
     <game>
-        <path>./cloud_backup.sh</path>
-        <name>云备份</name>
-        <desc>Backup your saves to a cloud drive using RCLONE. Please make sure you have followed the steps at jelos.org to set up RCLONE first.</desc>
+        <path>./baidupan_backup.sh</path>
+        <name>百度云备份</name>
+        <desc>通过该程序，可以将所有的存档备份到百度云。</desc>
         <developer>JELOS</developer>
         <publisher>JELOS</publisher>
         <rating>5.0</rating>
@@ -49,9 +49,9 @@
         <image>./images/rclone-backup.svg</image>
     </game>
     <game>
-        <path>./cloud_restore.sh</path>
-        <name>云恢复</name>
-        <desc>Restores your saves from a cloud drive using RCLONE. Please make sure you have followed the steps at jelos.org to set up RCLONE first.</desc>
+        <path>./baidupan_download.sh</path>
+        <name>百度云恢复</name>
+        <desc>通过该程序，可以将在百度云上保存的存档下载到本地。</desc>
         <developer>JELOS</developer>
         <publisher>JELOS</publisher>
         <rating>5.0</rating>
@@ -123,7 +123,7 @@
     <game>
         <path>./Start PPSSPP.sh</path>
         <name>启动 PPSSPP</name>
-        <desc>Opens the PPSSPP GUI (PSP) to enable global configuration changes to be made directly to the emulator. PPSSPP can run your PSP games on your PC or Android phone in full HD resolution or even higher. It can also upscale textures to make them sharper, and you can enable post-processing shaders to adjust color and brightness the way you like, and other effects.</desc>
+        <desc>启动 PPSSPP 图形界面，在这里你可以更改全局设置。通过 PPSSPP 你可以在你的电脑或者安卓手机上运行 PSP 游戏，且能够以全高清甚至更高的规格来展现。</desc>
         <developer>JELOS</developer>
         <publisher>JELOS</publisher>
         <rating>5.0</rating>
