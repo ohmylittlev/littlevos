@@ -35,14 +35,14 @@ search_path=${ROMS_FOLDER}
 for entry in "$search_path"/*
 do
     if [ -d "$entry" ]; then
-        if [ "$entry" = "savestates" ]; then
+        if [ "$entry" = "/storage/roms/savestates" ]; then
             for statefolder in "$entry"/*
             do
                 if [ -d "$statefolder" ]; then
                     for state in "$statefolder"/*
                     do
                         case $state in
-                            *.save|*.srm|*.auto|*.state*|*.png|*.jpg|*.jpeg)
+                            *.save|*.srm|*.auto|*.state|*.png|*.jpg|*.jpeg)
                                 remote_path=$(echo $state | sed -e "s/\/storage\///g")
                                 LANG=zh_CN.UTF-8 python -m bypy upload "${state}" "${remote_path}" -v
                                 echo -e "${state} uploaded" 2>&1
@@ -57,7 +57,7 @@ do
             for subentry in "$entry"/*
             do
                 case $subentry in
-                    *.sav|*.srm|*.auto|*.state*)
+                    *.sav|*.srm|*.auto|*.state)
                         remote_path=$(echo $subentry | sed -e "s/\/storage\///g")
                         LANG=zh_CN.UTF-8 python -m bypy upload "${subentry}" "${remote_path}" -v
                         echo -e "${subentry} uploaded" 2>&1
