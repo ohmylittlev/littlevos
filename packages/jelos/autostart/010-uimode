@@ -9,7 +9,7 @@ tocon "Configuring user interface..."
 
 UIMODE=$(get_setting desktop.enabled)
 if [ "${UIMODE}" = "1" ] || \
-   [ ! -e "/usr/bin/emulationstation" ]
+   [ ! -e "/storage/roms/pico-8/pico8_64" ]
 then
   cp -f /usr/share/weston/weston.ini /storage/.config/weston.ini
 else
@@ -18,9 +18,9 @@ fi
 
 STARTUP=$(get_setting weston.startup)
 if [ -z "${STARTUP}" ] && \
-   [ -e "/usr/bin/emulationstation" ]
+   [ -e "/storage/roms/pico-8/pico8_64" ]
 then
-  STARTUP="/usr/bin/start_es.sh"
+  STARTUP="/usr/bin/start_pico8.sh"
   set_setting weston.startup "${STARTUP}"
 fi
 sed -i "s#@STARTUP@#${STARTUP}#g" /storage/.config/weston.ini

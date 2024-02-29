@@ -459,12 +459,12 @@ hdmi_con() {
 
 load_splash() {
   clear >/dev/console
-  echo -en "\033[1000H\033[2K$(cat /sysroot/etc/issue)\n\n" >/dev/console
+  echo -en "\033[1000H\033[2K\n\n$(cat /sysroot/etc/issue)\n\n" >/dev/console
   if [ -f "/storage/.configured" ]
   then
-    echo -ne "\033[1000H\033[2K==> Loading, please wait..." >/dev/console
+    echo -ne "\n\n\033[1000H\033[2K==> Loading, please wait..." >/dev/console
   else
-    echo -ne "\033[1000H\033[2K==> Initializing, please wait..." >/dev/console
+    echo -ne "\n\n\033[1000H\033[2K==> Initializing, please wait..." >/dev/console
   fi
 }
 

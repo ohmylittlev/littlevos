@@ -5,6 +5,13 @@
 # Minimal OS variable loading for performance
 . /etc/profile.d/001-functions
 
+WIFI_SSID=$(grep ssid /storage/roms/pico8station.txt | awk -F= '{print $2}' | tr -d '\n')
+WIFI_KEY=$(grep key /storage/roms/pico8station.txt | awk -F= '{print $2}' | tr -d '\n')
+INTEGER_SCALE=$(grep integerscale /storage/roms/pico8station.txt | awk -F= '{print $2}' | tr -d '\n')
+set_setting wifi.ssid "${WIFI_SSID}"
+set_setting wifi.key "${WIFI_KEY}"
+set_setting pico-8.integerscale "${INTEGER_SCALE}" 
+
 tocon "Configuring network..."
 
 if [ "$(get_setting network.enabled)" == "0" ] || [ "$1" == "disable" ]
